@@ -6,10 +6,10 @@ const CartReducer = (state,action) => {
   if(action.type==="ADD_TO_CART"){
     let {id,color,quantity,product}=action.payload;
 
-    let isProductExist=state.cart && state.cart.find((currEle)=>currEle.id===id+color);
+    let isProductExist= state.cart.find((currEle)=>currEle.id===id+color);
     
     if(isProductExist){
-      let updateProduct=state.cart && state.cart.map((currEle)=>{
+      let updateProduct=state.cart.map((currEle)=>{
         if(currEle.id===id+color){
           let newQuantity=currEle.quantity+quantity;
            return {
@@ -50,7 +50,7 @@ const CartReducer = (state,action) => {
   }
 
   if(action.type==="REMOVE_CART"){
-    let newCartArr=state.cart && state.cart.filter((currEle)=>currEle.id !== action.payload);
+    let newCartArr=state.cart.filter((currEle)=>currEle.id !== action.payload);
     return {
       ...state,
       cart:newCartArr
@@ -70,7 +70,7 @@ const CartReducer = (state,action) => {
 
   if(action.type==="DECREASE_QUANTITY"){
  
-    let updateProducts=state.cart && state.cart.map((currEle)=>{
+    let updateProducts=state.cart.map((currEle)=>{
         if(currEle.id===action.payload){
           let decQuantity=currEle.quantity-1;
 
@@ -101,7 +101,7 @@ const CartReducer = (state,action) => {
 
   if(action.type==="INCREASE_QUANTITY"){
   
-    let updateProducts= state.cart && state.cart.map((currEle)=>{
+    let updateProducts=state.cart.map((currEle)=>{
      
         if(currEle.id===action.payload){
           let incQuantity=currEle.quantity + 1;
@@ -129,7 +129,7 @@ const CartReducer = (state,action) => {
 
 
   if(action.type==="TOTAL_CART_QUANTITY"){
-    let updateCartItem=state.cart && state.cart.reduce((initialValue,currEle)=>{
+    let updateCartItem= state.cart.reduce((initialValue,currEle)=>{
       let {quantity}=currEle;
 
       initialValue=initialValue+quantity;
@@ -144,7 +144,7 @@ const CartReducer = (state,action) => {
   }
 
   if(action.type==="TOTAL_AMOUNT"){
-    let updateTotalAmount=state.cart && state.cart.reduce((initialValue,currEle)=>{
+    let updateTotalAmount=state.cart.reduce((initialValue,currEle)=>{
       let {quantity,price}=currEle;
        initialValue=initialValue+(quantity*price);
       return initialValue;

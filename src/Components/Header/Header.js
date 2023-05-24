@@ -60,7 +60,7 @@ const Header = () => {
                     <NavLink to={item.path} key={index} className="md:px-5 font-semibold md:my-0 my-3">{item.display}</NavLink>
                 ))}
             </div>
-            <button>Login</button>
+            {/* <button>Login</button> */}
             <div className='cart relative mt-5 md:mt-0' >
                     <NavLink to="/cart" className="">
                         <BsCart2 className='w-12 h-10'/>

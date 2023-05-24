@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+import HeroSection from '../Components/HeroSection/HeroSection';
+
 
 const About = () => {
   return (
-    <h1>About Section</h1>
+   <HeroSection value="Ecommerce Website"/>
   )
 }
 

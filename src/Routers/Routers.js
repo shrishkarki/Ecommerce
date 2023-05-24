@@ -26,7 +26,7 @@ const Routers=()=>{
     <Route path="/cart" element={<Cart/>}/>
     <Route path="*" element={<ErrorPage/>}/>
 </Routes>
-{/* <Footer/> */}
+<Footer/>
 {/* <h1>Hello world</h1> */}
 </>
   

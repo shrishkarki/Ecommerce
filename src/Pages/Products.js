@@ -6,11 +6,11 @@ const Products = () => {
 
   return (
   //  <div className='grid grid-cols-[0.2fr,1fr] px-16'>
-  <div className='grid grid-cols-12 px-14'>
-    <div className='col-span-2'>
+  <div className='grid grid-cols-12 px-10 xl:px-14'>
+    <div className='col-span-12 lg:col-span-2'>
     <ProductFilter/>
     </div>
-    <div className="col-span-10">
+    <div className="col-span-12 lg:col-span-10">
       <div>
 <ProductSort/>
       </div>

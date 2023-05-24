@@ -8,10 +8,10 @@ const Home = () => {
   return (
     <>
     
-    <HeroSection/>
+    <HeroSection value="Karki Store"/>
     <FeaturedSection/>
-    {/* <Services/> */}
-    {/* <TrustedPartner/> */}
+    <Services/>
+    <TrustedPartner/>
     
    
 

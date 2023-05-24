@@ -7,13 +7,17 @@ const CartContext=createContext();
 const getLocalCartData=()=>{
   let localCartData=localStorage.getItem("CartItem");
 
-  if(localCartData===[]){
-    return [];
-  }
-else{
-  return JSON.parse(localCartData);
-}
-}
+//   if(localCartData===[]){
+//     return [];
+//   }
+// else{
+//   return JSON.parse(localCartData);
+// }
+
+const parsedData=JSON.parse(localCartData);
+if(!Array.isArray(parsedData)) return [];
+return parsedData;
+};
 
 
 const InitialState={
@@ -21,7 +25,7 @@ const InitialState={
   total_item:"",
   total_amount:"",
   shipping_fee:50000
-}
+};
 
 
 
